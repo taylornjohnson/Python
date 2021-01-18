@@ -3,7 +3,7 @@ import csv
 import os
 
 #Path to csv input file and text output file
-csvpath = os.path.join("PyBank/Resources/budget_data.csv")
+cvspath = os.path.join("PyBank/Resources/budget_data.csv")
 pathout = os.path.join("Resources", "budget_analysis.txt")
 
 #Set variables and counters 
@@ -17,11 +17,11 @@ greatestIncrease = ["", 0]
 greatestDecrease = ["", 99999999999]
 
 #Read the budget_data.csv file
-with open(csvpath, 'w', newline='') as revdata:
-   csvreader = csv.reader(csvfile, delimiter = ',')
+with open(cvspath) as revenueData:
+   reader = csv.DictReader(revenueData)
 
 #Loop through rows of data
-   for row in csvreader:
+   for row in reader:
 
        #Totaling
            totalMonth = totalMonth + 1
